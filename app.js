@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors'); 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+app.use(cors()); 
 
 
 const user = {
@@ -54,7 +56,6 @@ app.post('/bfhl', (req, res) => {
         highest_alphabet: processed.highest_alphabet
     });
 });
-
 
 app.get('/bfhl', (req, res) => {
     res.json({ operation_code: 1 });
